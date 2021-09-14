@@ -3,8 +3,9 @@ This Projects aims to Send Bulk Messages Using WhatsApp from Excel File
 
 ## Pre Requisite
 1. WhatsApp Desktop Should Be Installed
-2. MS Excel Should be Installed
-3. Internet Connection
+2. The Number should be Saved in your WhatsApp
+3. MS Excel Should be Installed
+4. Internet Connection
 
 ## Step 1
 1. Clone Tthe repo to your Computer Using git close command
