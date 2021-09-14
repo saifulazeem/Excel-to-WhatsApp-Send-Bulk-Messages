@@ -1,0 +1,35 @@
+Sub whatsAppMsg()
+
+Dim LastRow As Long
+Dim i As Integer
+Dim strip As String
+Dim strMessage As String
+Dim strPostData As String
+Dim IE As Object
+
+LastRow = Range("A" & Rows.Count).End(xlUp).Row
+
+For i = 2 To LastRow
+
+	strPhoneNumber = Sheets("Sheet1").Cells(i,1).Value
+	strMessage = Sheets("Sheet1").Cells(i,2).Value
+	Active.Sheet.Shapes(1).Copy
+
+'IE.navigation "whatsapp://send?phone=phone_number&text=your_message"
+
+	strPostData = "whatsapp://send?phone=" & strPhoneNumber & "&text=" & strMessage
+	Set IE = CreateObject("InternetExplorer.Application")
+	IE.navigation str PostData
+
+	Application.Wait (Now + TimeValue("00:00:08"))
+
+
+	call SendKeys("^v")
+
+	Application.Wait (Now + TimeValue("00:00:08"))
+
+	Call SendKeys("{ENTER}",True)
+
+Next i
+
+End Sub
